@@ -30,6 +30,8 @@ npm i
 npm run dev
 ```
 
+---
+
 # ⚙️ S3 File Manager - Backend
 
 This is the **FastAPI backend** for the **S3 File Manager** project.  
@@ -72,12 +74,19 @@ uvicorn main:app --reload --host 0.0.0.0 --port 4444
 - 📄 python-multipart → Handles file uploads (multipart/form-data)
 - 🔐 python-dotenv → Loads environment variables from .env
 
+---
+
 ## 📂 API Endpoints
-- GET /buckets → List all buckets
-- POST /bucket → Create bucket
-- DELETE /bucket/{bucket_name} → Delete bucket
-- GET /bucket/{bucket_name} → List objects in bucket
-- POST /upload → Upload file
-- DELETE /object → Delete file
-- POST /copy → Copy file
-- POST /move → Move file
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /buckets | Retrieve all available buckets |
+| POST | /bucket/{bucket_name} | Create a new bucket |
+| DELETE | /bucket/{bucket_name} | Remove an existing bucket |
+| GET | /bucket/{bucket_name} | List all objects within a bucket |
+| POST | /upload | Upload files to specified bucket |
+| DELETE | /object | Delete specific files |
+| POST | /copy | Copy files between buckets |
+| POST | /move | Move files to different locations |
+
+---
